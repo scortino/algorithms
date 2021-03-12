@@ -1,44 +1,42 @@
-fn _merge(arr: &mut [i32], l: usize, m: usize, h: usize) {
-    let n1 = m - l;
-    let n2 = h - m;
+fn _merge(arr: &mut [i32], lo: usize, mid: usize, hi: usize) {
+    let n1 = mid - lo;
+    let n2 = hi - mid;
     let mut left = Vec::with_capacity(n1);
     let mut right = Vec::with_capacity(n2);
-    for x in arr[l..m].iter() {
+    for x in arr[lo..mid].iter() {
         left.push(*x);
     }
-    for y in arr[m..h].iter() {
+    for y in arr[mid..hi].iter() {
         right.push(*y);
     }
-    let mut i = 0;
-    let mut j = 0;
-    let mut k = l;
+    let (mut i, mut j, mut k) = (0, 0 , lo);
     loop {
         if left[i] <= right[j] {
             arr[k] = left[i];
-            i = i + 1;
+            i += 1;
         } else {
             arr[k] = right[j];
-            j = j + 1;
+            j += 1;
         }
-        k = k + 1;
+        k += 1;
         if i >= n1 {
-            arr[k..h].clone_from_slice(&right[j..n2]);
+            arr[k..hi].clone_from_slice(&right[j..n2]);
             break;
         }
         if j >= n2 {
-            arr[k..h].clone_from_slice(&left[i..n1]);
+            arr[k..hi].clone_from_slice(&left[i..n1]);
             break;
         }
     }
 }
 
-fn _merge_sort(arr: &mut [i32], l: usize, h: usize) {
-    if l < (h - 1) {
-        let m = (l + h) / 2;
-        println!("{:?}", (l, m, h));
-        _merge_sort(arr, l, m);
-        _merge_sort(arr, m, h);
-        _merge(arr, l, m, h);
+fn _merge_sort(arr: &mut [i32], lo: usize, hi: usize) {
+    if lo < (hi - 1) {
+        let mid = (lo + hi) / 2;
+        println!("{:?}", (lo, mid, hi));
+        _merge_sort(arr, lo, mid);
+        _merge_sort(arr, mid, hi);
+        _merge(arr, lo, mid, hi);
     }
 }
 
