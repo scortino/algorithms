@@ -9,7 +9,7 @@ fn _merge(arr: &mut [i32], lo: usize, mid: usize, hi: usize) {
     for y in arr[mid..hi].iter() {
         right.push(*y);
     }
-    let (mut i, mut j, mut k) = (0, 0 , lo);
+    let (mut i, mut j, mut k) = (0, 0, lo);
     loop {
         if left[i] <= right[j] {
             arr[k] = left[i];

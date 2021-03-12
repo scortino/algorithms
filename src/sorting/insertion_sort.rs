@@ -5,8 +5,8 @@ pub fn insertion_sort(arr: &mut [i32]) {
     for j in 1..arr.len() {
         key = arr[j];
         i = j;
-        while i > 0 && arr[i-1] > key {
-            arr[i] = arr[i-1];
+        while i > 0 && arr[i - 1] > key {
+            arr[i] = arr[i - 1];
             i -= 1;
         }
         arr[i] = key;
