@@ -6,13 +6,19 @@ TODO:
 
 */
 pub struct MaxHeap {
-    size: usize,
-    items: Vec<i32>,
+    pub size: usize,
+    pub items: Vec<i32>,
+}
+
+impl Default for MaxHeap {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 #[allow(dead_code)]
 impl MaxHeap {
-    pub fn new() -> MaxHeap {
+    pub fn new() -> Self {
         MaxHeap {
             size: 0,
             items: Vec::new(),
@@ -21,6 +27,10 @@ impl MaxHeap {
 
     pub fn len(&self) -> usize {
         self.size
+    }
+
+    pub fn is_empty(&self) -> bool {
+        self.size == 0
     }
 
     fn parent(&self, i: usize) -> usize {
@@ -39,7 +49,7 @@ impl MaxHeap {
         i * 2 + 2
     }
 
-    fn max_heapify(&mut self, i: usize) {
+    pub fn max_heapify(&mut self, i: usize) {
         let l = self.left(i);
         let r = self.right(i);
         let mut largest: usize;
@@ -57,7 +67,7 @@ impl MaxHeap {
         }
     }
 
-    pub fn from_vector(v: Vec<i32>) -> MaxHeap {
+    pub fn from_vector(v: Vec<i32>) -> Self {
         let mut heap = MaxHeap {
             size: v.len(),
             items: v,
@@ -113,7 +123,7 @@ impl MaxHeap {
 }
 
 fn _satisfies_max_heap_property(heap: &MaxHeap, i: usize) -> bool {
-    if heap.len() == 0 {
+    if heap.is_empty() {
         panic!("heap underflow")
     } else if heap.len() == 1 || i >= heap.len() {
         true
