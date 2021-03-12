@@ -33,7 +33,6 @@ fn _merge(arr: &mut [i32], lo: usize, mid: usize, hi: usize) {
 fn _merge_sort(arr: &mut [i32], lo: usize, hi: usize) {
     if lo < (hi - 1) {
         let mid = (lo + hi) / 2;
-        println!("{:?}", (lo, mid, hi));
         _merge_sort(arr, lo, mid);
         _merge_sort(arr, mid, hi);
         _merge(arr, lo, mid, hi);
