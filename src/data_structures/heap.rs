@@ -52,11 +52,9 @@ impl MaxHeap {
     pub fn max_heapify(&mut self, i: usize) {
         let l = self.left(i);
         let r = self.right(i);
-        let mut largest: usize;
+        let mut largest: usize = i;
         if l < self.size && self.items[l] > self.items[i] {
             largest = l;
-        } else {
-            largest = i;
         }
         if r < self.size && self.items[r] > self.items[largest] {
             largest = r;
