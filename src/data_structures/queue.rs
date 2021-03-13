@@ -18,7 +18,7 @@ impl Queue {
             head: 0,
             tail: 0,
             items: vec![0; capacity + 1], // one more than capacity to be able to tell empty from full
-            capacity: capacity
+            capacity,
         }
     }
 

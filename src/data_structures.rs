@@ -1,7 +1,7 @@
 mod heap;
-mod stack;
 mod queue;
+mod stack;
 
 pub use heap::MaxHeap;
-pub use stack::Stack;
 pub use queue::Queue;
+pub use stack::Stack;
