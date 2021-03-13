@@ -19,7 +19,7 @@ impl Default for MaxHeap {
 #[allow(dead_code)]
 impl MaxHeap {
     pub fn new() -> Self {
-        MaxHeap {
+        Self {
             size: 0,
             items: Vec::new(),
         }
@@ -66,7 +66,7 @@ impl MaxHeap {
     }
 
     pub fn from_vector(v: Vec<i32>) -> Self {
-        let mut heap = MaxHeap {
+        let mut heap = Self {
             size: v.len(),
             items: v,
         };

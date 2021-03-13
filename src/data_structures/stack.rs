@@ -12,7 +12,7 @@ impl Default for Stack {
 #[allow(dead_code)]
 impl Stack {
     pub fn new() -> Self {
-        Stack {
+        Self {
             top: 0,
             items: Vec::new(),
         }
