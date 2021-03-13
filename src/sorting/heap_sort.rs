@@ -26,7 +26,6 @@ pub fn heap_sort(arr: &mut [i32]) {
     let len = arr.len();
     let mut size = len;
     for i in (1..len).rev() {
-        println!("{:?}", arr);
         arr.swap(0, i);
         size -= 1;
         sink(arr, 0, size);
