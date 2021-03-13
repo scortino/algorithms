@@ -1,6 +1,6 @@
 fn sink(arr: &mut [i32], i: usize, size: usize) {
     let (l, r) = (2 * i + 1, 2 * i + 2); // root's children
-    let mut largest = i; // assign i here
+    let mut largest = i;
     if l < size && arr[l] > arr[i] {
         largest = l;
     }
