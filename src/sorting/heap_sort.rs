@@ -3,7 +3,7 @@
 use crate::data_structures::MaxHeap;
 
 #[allow(dead_code)]
-fn heap_sort(arr: Vec<i32>) -> Vec<i32> {
+pub fn heap_sort(arr: Vec<i32>) -> Vec<i32> {
     let mut heapified_arr = MaxHeap::from_vector(arr);
     for i in (1..heapified_arr.len()).rev() {
         heapified_arr.items.swap(0, i);
