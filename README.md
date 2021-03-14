@@ -1,4 +1,6 @@
 # 20602 Algorithms - Rust Implementation
+[![Continuous integration](https://github.com/scortino/algorithms/actions/workflows/ci.yml/badge.svg)](https://github.com/scortino/algorithms/actions/workflows/ci.yml)
+
 This repository contains Rust implementations of the algorithms covered by the course [20602 Algorithms](http://didattica.unibocconi.it/ts/tsn_anteprima.php?cod_ins=20602&anno=2021&IdPag=6351). The list below will be periodically updated as new algorithms are implemented.
 
 ## [Data Structures](https://github.com/scortino/algorithms/tree/master/src/data_structures)
