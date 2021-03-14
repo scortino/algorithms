@@ -17,4 +17,6 @@ This repository contains Rust implementations of the algorithms covered by the c
 * [Quick](https://github.com/scortino/algorithms/blob/master/src/sorting/quick_sort.rs)
 * [Selection](https://github.com/scortino/algorithms/blob/master/src/sorting/selection_sort.rs)
 
+---
+
 Note that the purpose of this repository is for me to learn the Rust programming language by using it to implement some of the most common algorithms and data structures. If you think there is a better/more idiomatic way to implement some of them in Rust, feel free to reach out and let me know!
